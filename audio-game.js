@@ -4,6 +4,43 @@
    PART 4 — AUDIO / MINI GAME / SPECIAL FX
 ========================================================= */
 
+/* =========================================================
+   LOCAL UTILITIES
+   IMPORTANT:
+   audio-game.js is loaded as a normal script,
+   while main.js is an ES module.
+   Therefore these utilities must exist locally.
+========================================================= */
+
+const $ = (selector, parent = document) =>
+    parent.querySelector(selector);
+
+const $$ = (selector, parent = document) =>
+    [...parent.querySelectorAll(selector)];
+
+const random = (min, max) =>
+    Math.random() * (max - min) + min;
+
+const clamp = (value, min, max) =>
+    Math.min(Math.max(value, min), max);
+
+
+/* =========================================================
+   LOCAL AUDIO STATE
+========================================================= */
+
+const audioState = {
+    audioEnabled:false
+};
+
+
+/* =========================================================
+   SAFE GSAP ACCESS
+========================================================= */
+
+const audioGSAP =
+    window.gsap || null;
+
 
 /* =========================================================
    AUDIO ENGINE
@@ -297,7 +334,7 @@ function unlockAudio(){
 
     AudioEngine.resume();
 
-    state.audioEnabled =
+    audioState.audioEnabled =
         true;
 
     document.documentElement.classList.add(
@@ -1846,7 +1883,7 @@ function mouseDistortion(){
     const intensity =
         clamp(
             Math.abs(
-                state.normalizedX
+                window.__SHIN_MOUSE_X || 0
             ) * .8,
             0,
             1
