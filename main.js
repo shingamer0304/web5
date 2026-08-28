@@ -284,25 +284,18 @@ const cursorRing =
 
 if(cursor){
 
-    window.addEventListener(
-        "pointermove",
-        event => {
+window.__SHIN_MOUSE_X = 0;
 
-            state.mouseX =
-                event.clientX;
+window.addEventListener(
+    "pointermove",
+    event => {
 
-            state.mouseY =
-                event.clientY;
+        window.__SHIN_MOUSE_X =
+            (event.clientX / window.innerWidth) * 2 - 1;
 
-            state.normalizedX =
-                (event.clientX / window.innerWidth) * 2 - 1;
-
-            state.normalizedY =
-                (event.clientY / window.innerHeight) * 2 - 1;
-
-        },
-        { passive: true }
-    );
+    },
+    { passive:true }
+);
 
 }
 
