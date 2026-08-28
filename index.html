@@ -17,11 +17,11 @@
 
     <meta
         name="description"
-        content="Interactive 3D Portfolio"
+        content="Interactive 3D Portfolio - SHIN ENDFIELD TACTICAL SYSTEM"
     >
 
     <title>
-        SHIN ENDFIELD // SYSTEM
+        SHIN ENDFIELD // TACTICAL SYSTEM
     </title>
 
 
@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Chakra+Petch:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
@@ -41,10 +41,8 @@
          MAIN CSS
     ====================================================== -->
 
-    <link
-        rel="stylesheet"
-        href="./style.css"
-    >
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./endfield-theme.css">
 
 
     <!-- =====================================================
@@ -118,12 +116,12 @@
 
             background:
                 linear-gradient(
-                    rgba(51,214,255,.025) 1px,
+                    rgba(255,200,0,.025) 1px,
                     transparent 1px
                 ),
                 linear-gradient(
                     90deg,
-                    rgba(51,214,255,.025) 1px,
+                    rgba(255,200,0,.025) 1px,
                     transparent 1px
                 );
 
@@ -158,7 +156,7 @@
             letter-spacing:5px;
 
             color:
-                rgba(110,225,255,.65);
+                rgba(255,200,0,.75);
 
         }
 
@@ -177,10 +175,11 @@
 
             letter-spacing:8px;
 
-            color:#ecfbff;
+            color:#ffc800;
 
             text-shadow:
-                0 0 35px rgba(51,214,255,.3);
+                0 0 35px rgba(255,200,0,.5),
+                0 0 70px rgba(255,200,0,.2);
 
         }
 
@@ -197,7 +196,7 @@
             letter-spacing:3px;
 
             color:
-                rgba(200,235,245,.42);
+                rgba(200,150,0,.65);
 
         }
 
@@ -222,10 +221,10 @@
 
             height:100%;
 
-            background:#33d6ff;
+            background:linear-gradient(90deg, #ffc800, #ff8800);
 
             box-shadow:
-                0 0 18px #33d6ff;
+                0 0 18px #ffc800;
 
         }
 
@@ -242,7 +241,7 @@
             letter-spacing:3px;
 
             color:
-                rgba(150,225,255,.55);
+                rgba(255,200,0,.65);
 
         }
 
@@ -260,13 +259,13 @@
 
             border:
                 1px solid
-                rgba(51,214,255,.2);
+                rgba(255,200,0,.3);
 
             background:
                 rgba(0,0,0,.25);
 
             color:
-                rgba(200,240,255,.55);
+                rgba(255,200,0,.75);
 
             font-family:
                 "JetBrains Mono",
@@ -282,10 +281,10 @@
 
         #skipIntro:hover{
 
-            color:#fff;
+            color:#ffc800;
 
             border-color:
-                rgba(51,214,255,.6);
+                rgba(255,200,0,.8);
 
         }
 
@@ -310,15 +309,15 @@
         <div class="loader-center">
 
             <div class="loader-kicker">
-                INITIALIZING ENVIRONMENT
+                INITIALIZING ENDFIELD_OS
             </div>
 
             <div class="loader-title">
-                SHIN ENDFIELD
+                SHIN SYSTEM
             </div>
 
             <div class="loader-description">
-                CONSTRUCTING DIGITAL SYSTEM
+                NEURAL LINK CONNECTING...
             </div>
 
             <div class="loader-progress-wrap">
@@ -330,7 +329,7 @@
             </div>
 
             <div id="loadingText">
-                BOOTING CONSTRUCTION SYSTEM
+                TACTICAL INTERFACE LOADING
             </div>
 
         </div>
@@ -357,6 +356,12 @@
         <div class="cursor-core"></div>
 
         <div class="cursor-ring"></div>
+        
+        <svg class="cursor-crosshair" viewBox="0 0 50 50">
+            <line x1="25" y1="5" x2="25" y2="45" />
+            <line x1="5" y1="25" x2="45" y2="25" />
+            <circle cx="25" cy="25" r="8" />
+        </svg>
 
     </div>
 
@@ -381,15 +386,21 @@
         <div class="background-orbit orbit-b"></div>
 
         <div class="background-orbit orbit-c"></div>
+        
+        <!-- Hazard Stripe Pattern -->
+        <div class="hazard-pattern"></div>
 
     </div>
 
 
     <!-- =====================================================
-         NAVIGATION
+         NAVIGATION / TACTICAL HUD
     ====================================================== -->
 
-    <header class="site-header">
+    <header class="site-header tactical-header">
+
+        <div class="tactical-corner tactical-corner-tl"></div>
+        <div class="tactical-corner tactical-corner-tr"></div>
 
         <div class="brand">
 
@@ -398,7 +409,7 @@
             </span>
 
             <span class="brand-text">
-                SHIN
+                SHIN ENDFIELD
             </span>
 
         </div>
@@ -406,26 +417,23 @@
 
         <nav class="main-nav">
 
-            <a
-                href="#home"
-                class="active"
-            >
+            <a href="#home" class="active" data-section="HOME">
                 HOME
             </a>
 
-            <a href="#about">
+            <a href="#about" data-section="ABOUT">
                 ABOUT
             </a>
 
-            <a href="#skills">
+            <a href="#skills" data-section="SKILLS">
                 SKILLS
             </a>
 
-            <a href="#projects">
+            <a href="#projects" data-section="PROJECTS">
                 PROJECTS
             </a>
 
-            <a href="#contact">
+            <a href="#contact" data-section="CONTACT">
                 CONTACT
             </a>
 
@@ -436,7 +444,7 @@
 
             <span class="status-dot"></span>
 
-            SYSTEM ONLINE
+            <span class="status-text">SYSTEM ONLINE</span>
 
         </div>
 
@@ -451,34 +459,33 @@
 
 
         <!-- =================================================
-             HERO
+             HERO / TACTICAL OVERVIEW
         ================================================== -->
 
         <section
             id="home"
-            class="panel hero-panel"
+            class="panel hero-panel tactical-panel"
         >
 
-            <div class="hero-bg-number">
+            <div class="hero-bg-number tactical-number">
                 01
             </div>
 
+            <div class="tactical-scanline"></div>
 
             <div class="hero-content">
 
-
-                <div class="hero-sub">
+                <div class="hero-sub tactical-sub">
 
                     <span class="hero-line"></span>
 
                     DIGITAL ARCHITECT
-                    / CREATIVE DEVELOPER
+                    / TACTICAL DEVELOPER
 
                 </div>
 
-
                 <h1
-                    class="hero-title glitch"
+                    class="hero-title tactical-title glitch"
                     data-text="SHIN ENDFIELD"
                 >
                     SHIN
@@ -487,22 +494,19 @@
                     </span>
                 </h1>
 
-
                 <p class="hero-desc">
 
-                    สร้างประสบการณ์ดิจิทัล
-                    ที่ไม่ได้หยุดอยู่แค่การแสดงผล
-                    แต่ตอบสนองต่อทุกการเคลื่อนไหว
-                    ของผู้ใช้งาน
+                    สร้างประสบการณ์ดิจิทัลที่ไม่ได้หยุดอยู่แค่การแสดงผล
+                    แต่ตอบสนองต่อทุกการเคลื่อนไหวของผู้ใช้งาน
+                    ด้วยเทคโนโลยี Tactical System
 
                 </p>
-
 
                 <div class="hero-actions">
 
                     <a
                         href="#projects"
-                        class="hero-button magnetic"
+                        class="hero-button magnetic tactical-button"
                     >
 
                         <span>
@@ -513,252 +517,205 @@
 
                     </a>
 
-
                     <a
                         href="#contact"
-                        class="hero-secondary"
+                        class="hero-secondary tactical-secondary"
                     >
                         ESTABLISH CONNECTION
                     </a>
 
                 </div>
 
-
-                <div class="hero-meta">
+                <div class="hero-meta tactical-meta">
 
                     <span>
-                        LOCATION // THAILAND
+                        [LOCATION] THAILAND
                     </span>
 
                     <span>
-                        STATUS // AVAILABLE
+                        [STATUS] AVAILABLE
                     </span>
 
                     <span>
-                        BUILD // 2026
+                        [BUILD] 2026
                     </span>
 
                 </div>
 
             </div>
 
+            <div class="hero-visual tactical-visual">
 
-            <div class="hero-visual">
-
-                <div class="hero-orb">
+                <div class="hero-orb tactical-orb">
 
                     <div class="orb-ring ring-1"></div>
-
                     <div class="orb-ring ring-2"></div>
-
                     <div class="orb-ring ring-3"></div>
 
                     <div class="orb-core">
-
                         <span></span>
-
                     </div>
 
                 </div>
 
             </div>
 
-
             <div class="scroll-indicator">
-
-                <span>
-                    SCROLL TO DESCEND
-                </span>
-
+                <span>SCROLL TO DESCEND</span>
                 <i></i>
-
             </div>
 
         </section>
 
 
         <!-- =================================================
-             ABOUT
+             ABOUT / OPERATOR PROFILE
         ================================================== -->
 
         <section
             id="about"
-            class="panel about-panel"
+            class="panel about-panel tactical-panel"
         >
+
+            <div class="tactical-corner tactical-corner-about"></div>
 
             <div class="section-number">
                 02
             </div>
 
-
             <div class="section-title-wrap">
 
-                <div class="eyebrow">
-                    IDENTITY / PROFILE
+                <div class="eyebrow tactical-eyebrow">
+                    IDENTITY / OPERATOR PROFILE
                 </div>
 
-                <h2 class="section-title">
+                <h2 class="section-title tactical-heading">
                     ABOUT
                     <span>ME</span>
                 </h2>
 
             </div>
 
-
             <div class="about-layout">
 
-
                 <div
-                    class="about-main reveal"
+                    class="about-main reveal tactical-profile-card"
                     data-tilt
                 >
 
-                    <div class="about-code">
-                        PROFILE_001
+                    <div class="about-code tactical-code">
+                        [PROFILE_001] SHIN NICHNAKUL
                     </div>
 
                     <h3>
-                        DIGITAL
-                        <br>
-                        CREATOR
+                        DIGITAL<br>CREATOR
                     </h3>
 
                     <p>
 
-                        พื้นที่ส่วนนี้ใช้สำหรับ
-                        แนะนำตัวตน แนวคิด
-                        ความสนใจ และแนวทาง
-                        ในการสร้างผลงานของคุณ
+                        ชื่อ-นามสกุล: ณิชณกุล กล่อมแสร์
+                        บทบาท: Digital Architect & Tactical Developer
+                        โลคเขต: เชียงใหม่ ประเทศไทย
 
                     </p>
 
                     <p>
 
-                        เนื้อหาจริงสามารถนำข้อมูล
-                        ส่วนตัวที่คุณให้ไว้ในช่วงแรก
-                        มาแทนที่ข้อความส่วนนี้ได้
+                        ความสนใจหลัก: Creative Technology, Interactive Experiences, WebGL & 3D Graphics
+                        ศักยภาพ: Front-End Development, Motion Graphics, Tactical UI Design
 
                     </p>
 
-                    <div class="data-line"></div>
+                    <div class="data-line tactical-divider"></div>
 
-                    <div class="about-status">
+                    <div class="about-status tactical-stats">
 
-                        <span>
-                            CREATIVE
+                        <span class="stat-item">
+                            <small>CREATIVITY</small>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 95%"></div></div>
                         </span>
 
-                        <span>
-                            TECHNICAL
+                        <span class="stat-item">
+                            <small>TECHNICAL</small>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 85%"></div></div>
                         </span>
 
-                        <span>
-                            EXPERIMENTAL
+                        <span class="stat-item">
+                            <small>EXPERIMENTAL</small>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 90%"></div></div>
                         </span>
 
                     </div>
 
                 </div>
 
+                <div class="about-side tactical-info">
 
-                <div class="about-side">
+                    <div class="info-item reveal tactical-info-item" data-tilt>
 
-
-                    <div
-                        class="info-item reveal"
-                        data-tilt
-                    >
-
-                        <span class="info-index">
-                            01
-                        </span>
+                        <span class="info-index tactical-index">01</span>
 
                         <div>
-
-                            <small>
-                                NAME
-                            </small>
-
-                            <strong>
-                                [ชื่อของคุณ]
-                            </strong>
-
+                            <small>NAME</small>
+                            <strong>ณิชณกุล กล่อมแสร์ (ฌิน)</strong>
                         </div>
 
                     </div>
 
+                    <div class="info-item reveal tactical-info-item" data-tilt>
 
-                    <div
-                        class="info-item reveal"
-                        data-tilt
-                    >
-
-                        <span class="info-index">
-                            02
-                        </span>
+                        <span class="info-index tactical-index">02</span>
 
                         <div>
-
-                            <small>
-                                ROLE
-                            </small>
-
-                            <strong>
-                                [บทบาท / สายงาน]
-                            </strong>
-
+                            <small>AGE</small>
+                            <strong>16 / BORN 06-06-2010</strong>
                         </div>
 
                     </div>
 
+                    <div class="info-item reveal tactical-info-item" data-tilt>
 
-                    <div
-                        class="info-item reveal"
-                        data-tilt
-                    >
-
-                        <span class="info-index">
-                            03
-                        </span>
+                        <span class="info-index tactical-index">03</span>
 
                         <div>
-
-                            <small>
-                                BASE
-                            </small>
-
-                            <strong>
-                                Thailand
-                            </strong>
-
+                            <small>BASE</small>
+                            <strong>CHIANGMAI / THAILAND</strong>
                         </div>
 
                     </div>
 
+                    <div class="info-item reveal tactical-info-item" data-tilt>
 
-                    <div
-                        class="info-item reveal"
-                        data-tilt
-                    >
-
-                        <span class="info-index">
-                            04
-                        </span>
+                        <span class="info-index tactical-index">04</span>
 
                         <div>
-
-                            <small>
-                                FOCUS
-                            </small>
-
-                            <strong>
-                                Creative Technology
-                            </strong>
-
+                            <small>FOCUS</small>
+                            <strong>CREATIVE TECHNOLOGY</strong>
                         </div>
 
                     </div>
 
+                    <div class="info-item reveal tactical-info-item" data-tilt>
+
+                        <span class="info-index tactical-index">05</span>
+
+                        <div>
+                            <small>SCHOOL</small>
+                            <strong>CHIANG MAI (ม.3/2)</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="info-item reveal tactical-info-item" data-tilt>
+
+                        <span class="info-index tactical-index">06</span>
+
+                        <div>
+                            <small>CONTACT</small>
+                            <strong>shingamer0304@gmail.com</strong>
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -768,213 +725,123 @@
 
 
         <!-- =================================================
-             SKILLS
+             SKILLS / SYSTEM CAPABILITIES
         ================================================== -->
 
         <section
             id="skills"
-            class="panel skills-panel"
+            class="panel skills-panel tactical-panel"
         >
 
             <div class="section-number">
                 03
             </div>
 
-
             <div class="section-title-wrap">
 
-                <div class="eyebrow">
+                <div class="eyebrow tactical-eyebrow">
                     SYSTEM CAPABILITIES
                 </div>
 
-                <h2 class="section-title">
+                <h2 class="section-title tactical-heading">
                     SKILLS
                 </h2>
 
             </div>
 
+            <div class="skills-grid tactical-grid">
 
-            <div class="skills-grid">
+                <article class="orb-card reveal tactical-skill-card" data-tilt>
 
+                    <div class="card-number tactical-card-num">01</div>
 
-                <article
-                    class="orb-card reveal"
-                    data-tilt
-                >
-
-                    <div class="card-number">
-                        01
-                    </div>
-
-                    <div class="card-orb">
-
+                    <div class="card-orb tactical-card-orb">
                         <span></span>
-
                     </div>
 
-                    <h3>
-                        FRONTEND
-                    </h3>
+                    <h3>FRONTEND</h3>
 
                     <p>
-                        Interactive interfaces,
-                        animation systems
+                        Interactive interfaces, animation systems
                         and responsive experiences.
                     </p>
 
-                    <div class="card-tags">
-
-                        <span>
-                            HTML
-                        </span>
-
-                        <span>
-                            CSS
-                        </span>
-
-                        <span>
-                            JS
-                        </span>
-
+                    <div class="card-tags tactical-tags">
+                        <span class="tag-badge">HTML</span>
+                        <span class="tag-badge">CSS</span>
+                        <span class="tag-badge">JS</span>
                     </div>
 
                 </article>
 
+                <article class="orb-card reveal tactical-skill-card" data-tilt>
 
-                <article
-                    class="orb-card reveal"
-                    data-tilt
-                >
+                    <div class="card-number tactical-card-num">02</div>
 
-                    <div class="card-number">
-                        02
-                    </div>
-
-                    <div class="card-orb">
-
+                    <div class="card-orb tactical-card-orb">
                         <span></span>
-
                     </div>
 
-                    <h3>
-                        MOTION
-                    </h3>
+                    <h3>MOTION</h3>
 
                     <p>
-                        Scroll animation,
-                        transitions,
-                        micro-interactions
-                        and cinematic motion.
+                        Scroll animation, transitions,
+                        micro-interactions and cinematic motion.
                     </p>
 
-                    <div class="card-tags">
-
-                        <span>
-                            GSAP
-                        </span>
-
-                        <span>
-                            WEBGL
-                        </span>
-
-                        <span>
-                            MOTION
-                        </span>
-
+                    <div class="card-tags tactical-tags">
+                        <span class="tag-badge">GSAP</span>
+                        <span class="tag-badge">WEBGL</span>
+                        <span class="tag-badge">MOTION</span>
                     </div>
 
                 </article>
 
+                <article class="orb-card reveal tactical-skill-card" data-tilt>
 
-                <article
-                    class="orb-card reveal"
-                    data-tilt
-                >
+                    <div class="card-number tactical-card-num">03</div>
 
-                    <div class="card-number">
-                        03
-                    </div>
-
-                    <div class="card-orb">
-
+                    <div class="card-orb tactical-card-orb">
                         <span></span>
-
                     </div>
 
-                    <h3>
-                        3D
-                    </h3>
+                    <h3>3D</h3>
 
                     <p>
-                        WebGL scenes,
-                        3D environments,
-                        particles and
-                        procedural visuals.
+                        WebGL scenes, 3D environments,
+                        particles and procedural visuals.
                     </p>
 
-                    <div class="card-tags">
-
-                        <span>
-                            THREE
-                        </span>
-
-                        <span>
-                            GLSL
-                        </span>
-
-                        <span>
-                            3D
-                        </span>
-
+                    <div class="card-tags tactical-tags">
+                        <span class="tag-badge">THREE</span>
+                        <span class="tag-badge">GLSL</span>
+                        <span class="tag-badge">3D</span>
                     </div>
 
                 </article>
 
+                <article class="orb-card reveal tactical-skill-card" data-tilt>
 
-                <article
-                    class="orb-card reveal"
-                    data-tilt
-                >
+                    <div class="card-number tactical-card-num">04</div>
 
-                    <div class="card-number">
-                        04
-                    </div>
-
-                    <div class="card-orb">
-
+                    <div class="card-orb tactical-card-orb">
                         <span></span>
-
                     </div>
 
-                    <h3>
-                        EXPERIENCE
-                    </h3>
+                    <h3>EXPERIENCE</h3>
 
                     <p>
-                        Designing interfaces
-                        around interaction,
-                        atmosphere and
-                        visual storytelling.
+                        Designing interfaces around interaction,
+                        atmosphere and visual storytelling.
                     </p>
 
-                    <div class="card-tags">
-
-                        <span>
-                            UX
-                        </span>
-
-                        <span>
-                            UI
-                        </span>
-
-                        <span>
-                            FX
-                        </span>
-
+                    <div class="card-tags tactical-tags">
+                        <span class="tag-badge">UX</span>
+                        <span class="tag-badge">UI</span>
+                        <span class="tag-badge">FX</span>
                     </div>
 
                 </article>
-
 
             </div>
 
@@ -982,64 +849,200 @@
 
 
         <!-- =================================================
-             PROJECTS
+             PROJECTS / MISSION ARCHIVE
         ================================================== -->
 
         <section
             id="projects"
-            class="panel projects-panel"
+            class="panel projects-panel tactical-panel"
         >
 
             <div class="section-number">
                 04
             </div>
 
+            <div class="section-title-wrap">
+
+                <div class="eyebrow tactical-eyebrow">
+                    MISSION ARCHIVE
+                </div>
+
+                <h2 class="section-title tactical-heading">
+                    PROJECTS
+                </h2>
+
+            </div>
+
+            <div class="projects-grid tactical-projects">
+
+                <div class="project-card reveal tactical-project-card">
+
+                    <div class="project-status">[STATUS: IN_PROGRESS]</div>
+
+                    <div class="project-id">[LOG_ID: #042]</div>
+
+                    <h3>SHIN ENDFIELD PORTFOLIO</h3>
+
+                    <p>Interactive Tactical UI Portfolio using Three.js, GSAP, and WebGL with Arknights Endfield aesthetic.</p>
+
+                    <div class="project-tech">
+                        <span>THREE.JS</span>
+                        <span>GSAP</span>
+                        <span>WEBGL</span>
+                    </div>
+
+                    <a href="#" class="project-link tactical-link">
+                        ACCESS MISSION →
+                    </a>
+
+                </div>
+
+                <div class="project-card reveal tactical-project-card">
+
+                    <div class="project-status">[STATUS: DEPLOYED]</div>
+
+                    <div class="project-id">[LOG_ID: #041]</div>
+
+                    <h3>INTERACTIVE WEB EXPERIENCE</h3>
+
+                    <p>Cinematic scroll animations and responsive design with advanced CSS and JavaScript techniques.</p>
+
+                    <div class="project-tech">
+                        <span>CSS3</span>
+                        <span>JAVASCRIPT</span>
+                        <span>RESPONSIVE</span>
+                    </div>
+
+                    <a href="#" class="project-link tactical-link">
+                        ACCESS MISSION →
+                    </a>
+
+                </div>
+
+                <div class="project-card reveal tactical-project-card">
+
+                    <div class="project-status">[STATUS: ARCHIVED]</div>
+
+                    <div class="project-id">[LOG_ID: #040]</div>
+
+                    <h3>3D ENVIRONMENT PROTOTYPE</h3>
+
+                    <p>WebGL-based 3D scene with procedural generation and particle systems.</p>
+
+                    <div class="project-tech">
+                        <span>GLSL</span>
+                        <span>THREE.JS</span>
+                        <span>SHADERS</span>
+                    </div>
+
+                    <a href="#" class="project-link tactical-link">
+                        ACCESS MISSION →
+                    </a>
+
+                </div>
+
+            </div>
+
         </section>
 
 
         <!-- =================================================
-             CONTACT
+             CONTACT / COMMS LINK
         ================================================== -->
 
         <section
             id="contact"
-            class="panel contact-panel"
+            class="panel contact-panel tactical-panel"
         >
 
             <div class="section-number">
                 05
             </div>
 
-        </section>
+            <div class="section-title-wrap">
 
+                <div class="eyebrow tactical-eyebrow">
+                    TRANSMISSION / COMMS LINK
+                </div>
+
+                <h2 class="section-title tactical-heading">
+                    CONTACT
+                </h2>
+
+            </div>
+
+            <div class="contact-wrapper tactical-contact">
+
+                <div class="contact-signal-status">
+                    <span class="signal-dot"></span>
+                    <span>[SIGNAL: STABLE]</span>
+                </div>
+
+                <form class="contact-form tactical-form" id="contactForm">
+
+                    <div class="form-group">
+                        <label for="name">NAME / CALLSIGN</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">EMAIL / FREQUENCY</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">MESSAGE / TRANSMISSION</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="tactical-button submit-btn">
+                        SEND TRANSMISSION
+                    </button>
+
+                </form>
+
+                <div class="contact-links tactical-links">
+
+                    <h3>DIRECT CHANNELS</h3>
+
+                    <a href="mailto:shingamer0304@gmail.com" class="tactical-link">
+                        📧 EMAIL
+                    </a>
+
+                    <a href="https://facebook.com/shin.nichnakul" target="_blank" class="tactical-link">
+                        f FACEBOOK
+                    </a>
+
+                    <a href="https://instagram.com/shin_nichnakul" target="_blank" class="tactical-link">
+                        📷 INSTAGRAM
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
 
     <!-- =====================================================
-         EXTERNAL LIBRARIES
+         SCRIPTS
     ====================================================== -->
 
-    <!-- GSAP Animation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Three.js for 3D -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-    <!-- GSAP ScrollTrigger Plugin -->
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <!-- Three.js Library -->
-    <script async src="https://cdn.jsdelivr.net/npm/three@r128/build/three.min.js"></script>
+    <!-- Tilt.js for card hover -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla.tilt.min.js"></script>
 
-
-    <!-- =====================================================
-         APPLICATION SCRIPTS
-    ====================================================== -->
-
-    <!-- Audio & Game Engine (must load before main.js) -->
-    <script src="./audio-game.js"></script>
-
-    <!-- Main Application -->
-    <script type="module" src="./main.js"></script>
-
+    <!-- Main app scripts -->
+    <script src="./main.js"></script>
+    <script src="./endfield-effects.js"></script>
 
 </body>
 
