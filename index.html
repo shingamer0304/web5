@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SHIN ENDFIELD | Interactive Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+<script type="importmap">
+{
+"imports":{
+"three":"https://unpkg.com/three@0.170.0/build/three.module.js"
+}
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="cursor">
+<div class="cursor-core"></div>
+<div class="cursor-ring"></div>
+</div>
+
+<div id="loader">
+
+<div class="loader-bg"></div>
+
+<div class="loader-center">
+
+<h1 class="loader-title">SHIN ENDFIELD</h1>
+
+<div class="loader-line">
+<div class="loader-progress"></div>
+</div>
+
+<p id="loadingText">INITIALIZING CITY MODEL</p>
+
+<button id="skipIntro">SKIP</button>
+
+</div>
+
+<canvas id="introCanvas"></canvas>
+
+</div>
+
+<header class="topbar">
+
+<div class="logo">
+SHIN
+</div>
+
+<nav>
+
+<a href="#hero">HOME</a>
+<a href="#about">PROFILE</a>
+<a href="#education">EDUCATION</a>
+<a href="#hobby">HOBBY</a>
+<a href="#contact">CONTACT</a>
+
+</nav>
+
+</header>
+
+<canvas id="bgCanvas"></canvas>
+
+<div id="particles"></div>
+
+<section id="hero" class="panel hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<span class="hero-sub">
+INTERACTIVE PORTFOLIO
+</span>
+
+<h1 class="hero-title">
+
+SHIN
+
+<span>ENDFIELD</span>
+
+</h1>
+
+<p class="hero-desc">
+
+เว็บไซต์รูปแบบเกมที่ทุกองค์ประกอบมีชีวิต
+พร้อมระบบภาพ เสียง และการตอบโต้แบบเรียลไทม์
+
+</p>
+
+<div class="hero-button">
+ENTER EXPERIENCE
+</div>
+
+</div>
+
+<div class="scroll-indicator">
+
+<div class="mouse"></div>
+
+</div>
+
+</section>
+
+<section id="about" class="panel">
+
+<div class="section-number">01</div>
+
+<h2 class="section-title reveal">
+PROFILE
+</h2>
+
+<div class="glass-layout">
+
+<div class="profile-image floating">
+
+<div class="energy-ring ring1"></div>
+<div class="energy-ring ring2"></div>
+<div class="portrait"></div>
+
+</div>
+
+<div class="profile-info">
+
+<h3 class="reveal">ข้อมูลส่วนตัว</h3>
+
+<div class="info-grid">
+
+<div class="info-item reveal">
+
+<span>ชื่อ</span>
+<h4>Shin Endfield</h4>
+
+</div>
+
+<div class="info-item reveal">
+
+<span>อายุ</span>
+<h4>17 ปี</h4>
+
+</div>
+
+<div class="info-item reveal">
+
+<span>โรงเรียน</span>
+<h4>เชียงรายวิทยาคม</h4>
+
+</div>
+
+<div class="info-item reveal">
+
+<span>สายการเรียน</span>
+<h4>เทคโนโลยี / พัฒนาเว็บ</h4>
+
+</div>
+
+</div>
+
+<p class="reveal">
+
+หลงใหลการออกแบบเว็บไซต์ เกม และงานภาพเคลื่อนไหว
+ชื่นชอบการสร้างประสบการณ์ที่ผู้ใช้สามารถโต้ตอบได้จริง
+โดยผสมผสาน 3D Motion, Visual Effect และ Sound Design เข้าด้วยกัน
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="education" class="panel">
+
+<div class="section-number">02</div>
+
+<h2 class="section-title reveal">
+EDUCATION
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item reveal">
+
+<div class="dot"></div>
+
+<div class="content">
+
+<h3>ประถมศึกษา</h3>
+
+<p>เริ่มต้นเรียนรู้พื้นฐานด้านเทคโนโลยีและคอมพิวเตอร์</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item reveal">
+
+<div class="dot"></div>
+
+<div class="content">
+
+<h3>มัธยมศึกษาตอนต้น</h3>
+
+<p>พัฒนาทักษะการเขียนโปรแกรม และงานกราฟิก</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item reveal">
+
+<div class="dot"></div>
+
+<div class="content">
+
+<h3>เชียงรายวิทยาคม</h3>
+
+<p>มุ่งเน้นการออกแบบเว็บไซต์ และ Interactive Experience</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="hobby" class="panel">
+
+<div class="section-number">03</div>
+
+<h2 class="section-title reveal">
+HOBBY
+</h2>
+
+<div class="hobby-grid">
+
+<div class="orb-card reveal">
+<h3>WEB DESIGN</h3>
+<p>ออกแบบ UI แบบ Futuristic</p>
+</div>
+
+<div class="orb-card reveal">
+<h3>3D ART</h3>
+<p>โมเดลและฉาก Three.js</p>
+</div>
+
+<div class="orb-card reveal">
+<h3>GAME UI</h3>
+<p>สร้างอินเตอร์เฟซสไตล์เกม</p>
+</div>
+
+<div class="orb-card reveal">
+<h3>VISUAL FX</h3>
+<p>Particle / Shader / Motion</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="panel contact">
+
+<div class="section-number">04</div>
+
+<h2 class="section-title reveal">
+CONTACT
+</h2>
+
+<div class="contact-panel reveal">
+
+<h3>LET'S CREATE SOMETHING</h3>
+
+<div class="contact-line"></div>
+
+<div class="contact-item">
+<span>EMAIL</span>
+<h4>your@email.com</h4>
+</div>
+
+<div class="contact-item">
+<span>PHONE</span>
+<h4>000-000-0000</h4>
+</div>
+
+<div class="contact-item">
+<span>LOCATION</span>
+<h4>Chiang Rai, Thailand</h4>
+</div>
+
+<div class="launch-button">
+INITIALIZE CONNECTION
+</div>
+
+</div>
+
+</section>
+
+<div id="transition"></div>
+
+<script type="module" src="main.js"></script>
+
+</body>
+</html>
