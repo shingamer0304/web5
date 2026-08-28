@@ -21,6 +21,21 @@
 }
 
 /* ======================================================
+   GLOBAL TEXT RENDERING FIX
+   ====================================================== */
+
+body,
+h1, h2, h3, h4, h5, h6,
+.tactical-heading,
+.tactical-title,
+.tactical-eyebrow,
+.tactical-number {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ======================================================
    TACTICAL HEADER STYLING
    ====================================================== */
 
@@ -286,9 +301,8 @@
 
 .tactical-title {
   color: var(--endfield-yellow) !important;
-  text-shadow: 
-    0 0 20px rgba(255, 200, 0, 0.5),
-    0 0 40px rgba(255, 200, 0, 0.2);
+  text-shadow: 0 0 10px rgba(255, 200, 0, 0.4);
+  font-weight: 700;
 }
 
 .tactical-title span {
@@ -309,15 +323,18 @@
   color: var(--endfield-yellow) !important;
   font-family: 'JetBrains Mono', monospace;
   letter-spacing: 3px;
+  font-weight: 600;
 }
 
 .tactical-number {
   color: rgba(255, 200, 0, 0.3);
-  text-shadow: 0 0 20px rgba(255, 200, 0, 0.2);
+  text-shadow: 0 0 8px rgba(255, 200, 0, 0.15);
+  font-weight: 700;
 }
 
 .tactical-sub {
   color: var(--endfield-yellow) !important;
+  font-weight: 600;
 }
 
 .tactical-sub::before {
@@ -483,6 +500,7 @@
   color: #fff;
   display: block;
   margin-top: 5px;
+  font-weight: 600;
 }
 
 /* ======================================================
@@ -544,7 +562,7 @@
   color: var(--endfield-yellow);
   font-weight: 700;
   font-size: 14px;
-  text-shadow: 0 0 10px rgba(255, 200, 0, 0.4);
+  text-shadow: 0 0 6px rgba(255, 200, 0, 0.3);
 }
 
 .tactical-card-orb span {
@@ -556,7 +574,9 @@
 
 .tactical-skill-card h3 {
   color: var(--endfield-yellow);
-  text-shadow: 0 0 10px rgba(255, 200, 0, 0.3);
+  text-shadow: 0 0 6px rgba(255, 200, 0, 0.25);
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .tactical-skill-card p {
@@ -657,6 +677,7 @@
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 700;
 }
 
 .tactical-project-card p {
@@ -703,7 +724,7 @@
 .tactical-link:hover {
   color: #fff;
   border-color: var(--endfield-yellow);
-  text-shadow: 0 0 10px rgba(255, 200, 0, 0.5);
+  text-shadow: 0 0 8px rgba(255, 200, 0, 0.4);
 }
 
 /* ======================================================
