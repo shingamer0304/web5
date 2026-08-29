@@ -466,12 +466,10 @@ class CardTilt {
 // ====================================================== 
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize all systems
-  new TacticalCursor();
-  new BootSequence();
+  // The main engine owns the loader and custom cursor. Initializing a second
+  // copy here caused two animation loops to compete for the same elements.
   new GlitchEffect();
   new ScanEffect();
-  new ParticleSystem();
   new TacticalHUD();
   new TacticalFormHandler();
   new ScrollAnimations();
