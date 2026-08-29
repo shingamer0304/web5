@@ -663,7 +663,7 @@ box-shadow:
 .section-title{
 
 font-size:
-clamp(55px,10vw,150px);
+clamp(42px,8vw,112px);
 
 line-height:.85;
 
@@ -867,7 +867,7 @@ box-shadow:
 .hero-title{
 
 font-size:
-clamp(80px,15vw,230px);
+clamp(62px,12vw,168px);
 
 line-height:.72;
 
@@ -929,7 +929,7 @@ max-width:650px;
 
 margin-top:55px;
 
-font-size:18px;
+font-size:clamp(16px,1.35vw,18px);
 
 line-height:2;
 
@@ -1437,7 +1437,7 @@ margin-top:45px;
 
 max-width:700px;
 
-font-size:16px;
+font-size:clamp(15px,1.2vw,17px);
 
 line-height:2.2;
 
