@@ -4,7 +4,9 @@
    PART 3 — MAIN JAVASCRIPT
 ========================================================= */
 
-import * as THREE from "three";
+// Three.js is loaded before this file in index.html and is available globally.
+// Keeping this file as a classic script avoids a bare-module import error in
+// browsers, which would otherwise prevent the entire app from starting.
 
 /* =========================================================
    INITIAL SETUP

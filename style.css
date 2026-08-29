@@ -26,7 +26,20 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-cursor:none;
+}
+
+/* Use the custom cursor only where a mouse-like pointer is available.
+   Touch devices retain the native cursor and form controls. */
+@media (hover:hover) and (pointer:fine){
+  *{
+    cursor:none;
+  }
+}
+
+@media (hover:none), (pointer:coarse){
+  #cursor{
+    display:none;
+  }
 }
 
 html{
