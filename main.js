@@ -64,6 +64,12 @@ const lerp = (a, b, t) =>
 const random = (min, max) =>
     Math.random() * (max - min) + min;
 
+const finePointer =
+    window.matchMedia("(hover:hover) and (pointer:fine)").matches;
+
+const reducedMotion =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 
 /* =========================================================
    PARTICLE DOM FIELD
@@ -76,9 +82,11 @@ function createParticles(){
     if(!container) return;
 
     const count =
-        window.innerWidth < 600
-            ? 35
-            : 75;
+        reducedMotion
+            ? 0
+            : window.innerWidth < 600
+                ? 18
+                : 40;
 
     const fragment =
         document.createDocumentFragment();
@@ -284,7 +292,7 @@ const cursorCore =
 const cursorRing =
     $(".cursor-ring");
 
-if(cursor){
+if(cursor && finePointer){
 
 window.__SHIN_MOUSE_X = 0;
 
@@ -301,12 +309,33 @@ window.addEventListener(
 
 }
 
+window.addEventListener(
+    "pointermove",
+    event => {
+
+        if(!finePointer || event.pointerType !== "mouse")
+            return;
+
+        state.mouseX = event.clientX;
+        state.mouseY = event.clientY;
+        state.normalizedX =
+            (event.clientX / window.innerWidth) * 2 - 1;
+        state.normalizedY =
+            (event.clientY / window.innerHeight) * 2 - 1;
+
+    },
+    { passive:true }
+);
+
 
 /* =========================================================
    CURSOR ANIMATION LOOP
 ========================================================= */
 
 function updateCursor(){
+
+    if(!finePointer)
+        return;
 
     state.cursorX =
         lerp(
@@ -400,6 +429,9 @@ let lastParticleTime = 0;
 window.addEventListener(
     "pointermove",
     event => {
+
+        if(!finePointer || event.pointerType !== "mouse")
+            return;
 
         const now =
             performance.now();
@@ -1428,7 +1460,7 @@ function createIntroScene(){
     introRenderer.setPixelRatio(
         Math.min(
             window.devicePixelRatio,
-            2
+            1.25
         )
     );
 
@@ -1695,7 +1727,12 @@ let constructionParticles;
 
 function createConstructionParticles(){
 
-    const count = 700;
+    const count =
+        reducedMotion
+            ? 0
+            : window.innerWidth < 600
+                ? 180
+                : 360;
 
     const positions =
         new Float32Array(
